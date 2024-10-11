@@ -1,0 +1,64 @@
+#include<DHT.h>
+
+#define led 13
+#define trigger 8
+#define echo 7
+#define rele 4
+#define DHTPIN 12
+#define DHTTYPE DHT22 //alterar para o 11 no arduino
+int dist = 0;
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  pinMode(led, OUTPUT);
+  pinMode(trigger, OUTPUT);
+  pinMode(echo, INPUT);
+  pinMode(rele, OUTPUT);
+  dht.begin();
+  Serial.begin(9600);
+}
+
+void loop() {
+  int temp = dht.readTemperature();
+  int umi = dht.readHumidity();
+
+  if(temp > 35) {
+    digitalWrite(led, HIGH);
+    Serial.println("Temperatura alta: " + String(temp));
+    delay(2000);
+  }
+  else {
+    digitalWrite(led, LOW);
+    Serial.println("Temperatura normal: " + String(temp));
+    delay(2000);
+  }
+  digitalWrite(trigger, LOW);
+  delayMicroseconds(5);
+  digitalWrite(trigger, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigger, LOW);
+
+  dist = pulseIn(echo, HIGH);
+  dist = dist / 58;
+
+  dist = 3.14 * (7*7) * dist;
+
+  Serial.println(dist);
+
+  if(dist < 3000 && umi < 40) {
+    digitalWrite(rele, HIGH);
+    Serial.println("Valvula abrida");
+  }
+  else {
+    digitalWrite(rele, LOW);
+    Serial.println("Valvula fechada");
+  }
+
+}
+
+//dht11 ou 22
+//ultra
+//led
+//rele
+//resistor 22ons
