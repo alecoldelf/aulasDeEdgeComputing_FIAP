@@ -1,0 +1,463 @@
+[
+    {
+        "id": "9a7b3177b6aa7e75",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c3cc2d9c927b6bd5",
+        "type": "ui_tab",
+        "name": "Aula 01 Node",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "798892c63adabf2a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#a861ff",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#a861ff",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#a861ff",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#d2adff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#a861ff",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "3fa8850e58561d16",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "c3cc2d9c927b6bd5",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bb242cca9d555972",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "49454ddee6881d28",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "bb242cca9d555972",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f60b650fcb17f6d",
+        "type": "ui_group",
+        "name": "vento",
+        "tab": "c3cc2d9c927b6bd5",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dffce82d4016c48f",
+        "type": "inject",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "eu odeio o enzo",
+        "payloadType": "str",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "1f3d225bebf63dc7"
+            ]
+        ]
+    },
+    {
+        "id": "25dd2ba10ebd121a",
+        "type": "debug",
+        "z": "9a7b3177b6aa7e75",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1f3d225bebf63dc7",
+        "type": "http request",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?lat=-23.6861&lon=-46.6228&appid=a669c7581a465a7a7c6ca5cea61e378f&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "10eb868bc87456a5"
+            ]
+        ]
+    },
+    {
+        "id": "10eb868bc87456a5",
+        "type": "json",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "5cf67e26ce978526",
+                "0fcad0a952a5199d",
+                "9892478981505efb",
+                "e7bd133665fa6475"
+            ]
+        ]
+    },
+    {
+        "id": "5cf67e26ce978526",
+        "type": "change",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 340,
+        "wires": [
+            [
+                "9adf6c975d4ae1b2"
+            ]
+        ]
+    },
+    {
+        "id": "9adf6c975d4ae1b2",
+        "type": "ui_gauge",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "group": "3fa8850e58561d16",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Temp",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#000000",
+            "#11ff00",
+            "#000000"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 630,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0fcad0a952a5199d",
+        "type": "change",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_min",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "b189a0c2a6e348ce"
+            ]
+        ]
+    },
+    {
+        "id": "b189a0c2a6e348ce",
+        "type": "ui_gauge",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "group": "3fa8850e58561d16",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Temp_min",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#000000",
+            "#00aaff",
+            "#000000"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 650,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9892478981505efb",
+        "type": "change",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_max",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 200,
+        "wires": [
+            [
+                "25dd2ba10ebd121a",
+                "fa34ab043242f551"
+            ]
+        ]
+    },
+    {
+        "id": "fa34ab043242f551",
+        "type": "ui_gauge",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "group": "3fa8850e58561d16",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Temp_max",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#000000",
+            "#ff0000",
+            "#000000"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 650,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "e7bd133665fa6475",
+        "type": "change",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.wind.speed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 660,
+        "wires": [
+            [
+                "c2591c55b8ab52c9"
+            ]
+        ]
+    },
+    {
+        "id": "c2591c55b8ab52c9",
+        "type": "ui_gauge",
+        "z": "9a7b3177b6aa7e75",
+        "name": "",
+        "group": "6f60b650fcb17f6d",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Vento",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#000000",
+            "#ff00f7",
+            "#000000"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 630,
+        "y": 660,
+        "wires": []
+    }
+]
